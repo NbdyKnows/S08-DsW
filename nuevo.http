@@ -1,0 +1,35 @@
+@server = https://nbdyknows-symmetrical-space-barnacle-xgjggx5v7v9h9xww-8080.preview.app.github.dev
+###
+GET {{server}}
+###
+GET {{server}}/cursos
+###
+GET {{server}}/cursos/2
+###
+GET {{server}}/cursos?size=2
+###
+GET {{server}}/cursos?size=2&page=1
+###
+GET {{server}}/cursos?sort=nombre,desc
+###
+GET {{server}}/cursos?sort=nombre,asc
+###
+GET {{server}}/cursos?sort=creditos,desc
+###
+POST {{server}}/cursos
+Content-Type: application/json
+
+{"nombre": "Lógica de Programación", "creditos": 4}
+###
+DELETE {{server}}/cursos/102
+###
+PATCH {{server}}/cursos/55
+Content-Type: application/json
+
+{"creditos": 5}
+
+###
+GET {{server}}/profile/cursos
+
+###
+GET {{server}}/cursos/search/findByNombre?nombre=Inteligencia+Artificial+2
